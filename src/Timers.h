@@ -1,7 +1,7 @@
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef __TIMER_H__
+#define __TIMER_H__
 
-#include "inttypes.h"
+#include "board.h"
 
 typedef struct {
 uint8_t H;
@@ -14,4 +14,4 @@ extern t_timer T1;
 void printTimer(uint8_t x, uint8_t y, t_timer tim);
 void addSecond(t_timer *tim);
 
-#endif TIMER_H
+#endif //__TIMER_H__

@@ -1,19 +1,19 @@
-#include <mega8.h>
-#include "inttypes.h"
+
+#include "board.h"
 
 void Perepherial_init(void){
 // Input/Output Ports initialization
 // Port B initialization
-// Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In 
-// State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T 
-PORTB=0x00;
-DDRB=0x00;
+// Func7=In Func6=In Func5=Out Func4=In Func3=Out Func2=In Func1=Out Func0=Out 
+// State7=T State6=T State5=0 State4=P State3=0 State2=P State1=0 State0=0 
+PORTB=0x14;
+DDRB=0x2B;
 
 // Port C initialization
-// Func6=Out Func5=Out Func4=Out Func3=In Func2=In Func1=In Func0=In 
-// State6=0 State5=0 State4=0 State3=T State2=T State1=T State0=T 
-PORTC=0x00;
-DDRC=0x70;
+// Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In 
+// State6=T State5=P State4=P State3=T State2=T State1=T State0=T 
+PORTC=0x30;
+DDRC=0x00;
 
 // Port D initialization
 // Func7=In Func6=In Func5=In Func4=In Func3=Out Func2=In Func1=In Func0=In 
@@ -23,9 +23,9 @@ DDRD=0x08;
 
 // Timer/Counter 0 initialization
 // Clock source: System Clock
-// Clock value: 500.000 kHz
-TCCR0=0x02;
-TCNT0=0x00;
+// Clock value: 3.906 kHz
+TCCR0=0x05;
+TCNT0=0xBF;
 
 // Timer/Counter 1 initialization
 // Clock source: System Clock
@@ -66,7 +66,7 @@ OCR2=0x00;
 MCUCR=0x00;
 
 // Timer(s)/Counter(s) Interrupt(s) initialization
-TIMSK=0x04;
+TIMSK=0x05;
 
 // Analog Comparator initialization
 // Analog Comparator: Off
@@ -74,4 +74,12 @@ TIMSK=0x04;
 ACSR=0x80;
 SFIOR=0x00;
 
+// SPI initialization
+// SPI Type: Master
+// SPI Clock Rate: 1000.000 kHz
+// SPI Clock Phase: Cycle Half
+// SPI Clock Polarity: Low
+// SPI Data Order: MSB First
+SPCR=0x50;
+SPSR=0x00;
 }

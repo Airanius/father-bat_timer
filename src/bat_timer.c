@@ -22,18 +22,27 @@ Data Stack size         : 256
 *****************************************************/
 
 #include <mega8.h>
+#include "board.h"
 #include "Timers.h"
-#include "inttypes.h"
 
-extern void Perepherial_init(void);
+
 
 // Alphanumeric LCD Module functions
 #asm
    .equ __lcd_port=0x12 ;PORTD
 #endasm
-#include <lcd.h>
+
 
 volatile bit flag = 1;
+
+// Timer 0 overflow interrupt service routine
+interrupt [TIM0_OVF] void timer0_ovf_isr(void)
+{
+// Reinitialize Timer 0 value
+TCNT0=0xC8;
+// Place your code here
+    Keypad_scan();
+}
 
 // Timer1 overflow interrupt service routine
 interrupt [TIM1_OVF] void timer1_ovf_isr(void)
@@ -41,7 +50,6 @@ interrupt [TIM1_OVF] void timer1_ovf_isr(void)
 // Reinitialize Timer1 value
 TCNT1=0x0BDB;
 // Place your code here
-    PORTD.3 ^= 1;
     addSecond(&T1);
     flag = 1;
 }
@@ -53,6 +61,7 @@ void main(void)
     // Declare your local variables here
 
     Perepherial_init();
+    Keypad_init();
     
     // LCD module initialization
     lcd_init(16);
@@ -65,7 +74,7 @@ void main(void)
         // Place your code here
         if(flag){   
             flag = 0;
-            printTimer(8, 1, T1);
+            //printTimer(8, 1, T1);
         }
     };
 }
