@@ -6,7 +6,7 @@
 t_timer T1 = {0,0,0};
 
 
-void put_digit(byte digit){
+void put_digit(uint8_t digit){
     lcd_putchar(digit + '0');
 }
 
@@ -22,7 +22,7 @@ void addSecond(t_timer *tim){
     }
 }
 
-void printTimer(byte x, byte y, t_timer tim){
+void printTimer(uint8_t x, uint8_t y, t_timer tim){
     lcd_gotoxy(x,y);
     if (tim.H > 9){
         put_digit((tim.H / 10));

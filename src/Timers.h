@@ -1,12 +1,17 @@
-typedef struct {
-unsigned char H;
-unsigned char M;
-unsigned char S;
-} t_timer;
+#ifndef TIMER_H
+#define TIMER_H
 
-typedef unsigned char byte;
+#include "inttypes.h"
+
+typedef struct {
+uint8_t H;
+uint8_t M;
+uint8_t S;
+} t_timer;
 
 extern t_timer T1;
 
-void printTimer(byte x, byte y, t_timer tim);
+void printTimer(uint8_t x, uint8_t y, t_timer tim);
 void addSecond(t_timer *tim);
+
+#endif TIMER_H

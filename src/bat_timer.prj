@@ -1,7 +1,7 @@
 [Project]
 Toolset=AVR
 FormatVersion=2
-Files=2
+Files=3
 OpenedFiles=2
 OF1=bat_timer.c
 Active1=1
@@ -9,10 +9,8 @@ OutputListFilesDirectory=List
 OutputObjectFilesDirectory=Obj
 OutputExecutableFilesDirectory=Exe
 OutputLinkerFilesDirectory=Linker
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 CleanUp=2
-F1=bat_timer.c
-F2=Timers.c
 Active0=0
 PageIndex0=0
 TimeStamp1=1113043932
@@ -21,9 +19,12 @@ OF2=Timers.c
 Active2=0
 TimeStamp2=1113043782
 PageIndex2=2
+F1=bat_timer.c
+F2=Timers.c
+F3=Init.c
 [Compiler]
 RebuildAll=0
-LinkageInformationPresent=1
+LinkageInformationPresent=0
 Chip=ATmega8
 CPUClock=4000000
 MemoryModel=1
@@ -111,7 +112,7 @@ WarningUnknownPragma=1
 LinkerWarnings=1
 DebugBootLoader=0
 WatchAVR8LAutoVariables=0
-Build=48
+Build=52
 UseEEPROMLocation0=1
 ExternalInterruptVectors=0
 IncludePath0=
@@ -296,9 +297,12 @@ BK9=-1
 [FoldedCode2]
 Blocks=0
 [HeadersList]
-Files=2
+Files=5
 F1=D:\Google Диск\Projects\Father\Bat_timer\src\bat_timer.c
 F2=D:\Google Диск\Projects\Father\Bat_timer\src\Timers.c
+F3=D:\GIT\Father\Bat_timer\src\bat_timer.c
+F4=D:\GIT\Father\Bat_timer\src\Timers.c
+F5=D:\GIT\Father\Bat_timer\src\Init.c
 [Header2]
 Files=4
 F1=C:\cvavr2\inc\mega8.h
@@ -316,7 +320,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1113043942
+TimeStamp=1113045110
 [Bookmarks3]
 TimeStamp=1113043932
 Row=39
@@ -337,3 +341,22 @@ BK9=-1
 Blocks=0
 [FoldedCode1]
 Blocks=0
+[Header4]
+Files=5
+F1=C:\cvavr2\inc\mega8.h
+F2=C:\cvavr2\inc\mega8_bits.h
+F3=C:\cvavr2\inc\lcd.h
+F4=Timers.h
+F5=inttypes.h
+[Header3]
+Files=5
+F1=C:\cvavr2\inc\mega8.h
+F2=C:\cvavr2\inc\mega8_bits.h
+F3=Timers.h
+F4=inttypes.h
+F5=C:\cvavr2\inc\lcd.h
+[Header5]
+Files=3
+F1=C:\cvavr2\inc\mega8.h
+F2=C:\cvavr2\inc\mega8_bits.h
+F3=inttypes.h
