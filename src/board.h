@@ -13,6 +13,11 @@
 
 extern void Keypad_init(void);
 extern void Keypad_scan(void);
+
 extern void Perepherial_init(void);
+
+extern void setQ(uint8_t num);
+extern void resetQ(uint8_t num);
+
 
 #endif //__BOARD_H__
